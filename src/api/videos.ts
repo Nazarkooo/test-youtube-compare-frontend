@@ -3,7 +3,7 @@ import type { ComparisonResults } from "@/types/LandingPageTypes";
 
 export const compareVideos = async (termA:string,termB:string) => {
         try {
-          const res = await fetch("http://localhost:8000/api/v1/compare", {
+          const res = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/compare`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ term1: termA.trim(), term2: termB.trim() }),
